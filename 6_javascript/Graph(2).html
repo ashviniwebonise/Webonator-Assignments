@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph</title>
+    <style type="text/css">
+        .body {
+            margin-top: 20px;
+            margin-left: 20px;
+           
+            padding: 0px;
+            background-color: #FFFFFF;
+            font-family: Calibri, Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: #4e4e4e;
+        }
+            </style>
+            </head> 
+
+<body>
+    
+     <div class="body">
+          Equation: <input type="text" id="Equation" value=" "> Equation should be in(mx+c format) 
+    <br>
+         <br >
+     Step:<input type="text" name="Step" id="Step">
+    <br> 
+    <br> 
+     Inbound: <input type="text" name="Inbound" id="Inbound"> 
+    <br>
+    <br>
+     Outbound: <input type="text" name="Outbound" id="Outbound">
+    <br>
+    <br> 
+    <button onclick="get()">Show</button> 
+    </div> 
+    
+    <div align="center">
+     <canvas id="myCanvas" width="800" height="800" style="border:1px solid #d3d3d3;"/> 
+    <canvas id="new" width="400" height="400" style="border:10px;border-color:red;"/>
+    </div>
+   
+     <script> 
+        
+         var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx .beginPath();
+            ctx .moveTo(800, 400);
+            ctx .lineTo(0, 400);
+            ctx .lineWidth = "1";
+            ctx .strokeStyle = "black";
+            ctx .moveTo(400, 0);
+            ctx .lineTo(400, 800);
+            ctx .lineWidth = "1";
+            ctx .strokeStyle = "black";
+            ctx .stroke();
+
+            function get() {
+                if (document.getElementById('Equation').value == "") {
+                    alert("You have to enter value for Equation");
+                }
+                else {
+                    eq = document.getElementById('Equation').value;
+                    re = /([0-9]+)+[a-z]\+([0-9]+)/;
+                    res = re.exec(eq);
+
+                    if (res == null) {
+                        alert("Equation should be in(mx+c format)");
+
+                    }
+
+                    else {
+
+                        if (document.getElementById("Step").value == "" || document.getElementById("Inbound").value == "" || document.getElementById("Outbound").value == "")
+                        {
+                            alert("Please Enter all values for Step,Inbound and Outbound");
+                        }
+                    else{
+                        var getEquation = document.getElementById("Equation").value;
+                        var getStep = document.getElementById("Step").value;
+                        var getInbound = document.getElementById("Inbound").value;
+                        var getOutbound = document.getElementById("Outbound").value;
+                        var str = getEquation;
+                        var res = str.split("x+");
+                        alert(res);
+                        var m = parseInt(res[0], 10);
+                        c = parseInt(res[1], 10);
+                        x1 = parseInt(getInbound, 10);
+                        alert(x1);
+                        y1 = parseInt(m * getInbound + c, 10);
+                        alert(y1);
+                        x2 = parseInt(getInbound, 10) + parseInt(getStep, 10);
+                        alert(x2);
+                        y2 = parseInt(m * x2 + c, 10);
+                        alert(y2);
+                        var canvas = document.getElementById("myCanvas");
+                        var ctx = canvas.getContext("2d");
+                        ctx.beginPath();
+                        ctx.moveTo(x2 + 400, y2);
+                        ctx.lineTo(x1 + 400, y1);
+                        ctx.stroke();
+                        }
+                    }
+                }
+            }
+        </script > 
+    </body >
+ </html >

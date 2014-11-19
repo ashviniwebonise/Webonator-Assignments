@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+  
+
+    <title>Color Game</title>
+    <style type="text/css">
+         .radiolist{
+    margin-top:180px;
+    margin-left:600px;
+    align-items:center;
+    padding:0px;
+    background-color:#FFFFFF;
+    font-family:Calibri, Arial, Helvetica, sans-serif;
+    font-size:13px;
+    color:#4e4e4e;
+
+     }
+          .reset{
+    margin-top:260px;
+    margin-left:600px;
+    align-items:center;
+    padding:0px;
+    background-color:#FFFFFF;
+    font-family:Calibri, Arial, Helvetica, sans-serif;
+    font-size:15px;
+    color:#4e4e4e;
+   
+     }
+        .mybutton {
+                     
+           background-color:#ccc;
+             font-size: 35px;
+             border:none;
+            height:70px;
+            width:70px;
+            margin-left:8px;
+            margin-top:8px;
+        }
+        
+       .center{
+    position: absolute;
+    height: 244px;
+    width: 250px;
+   
+    top:calc(50% - 244px/2); /* height divided by 2*/
+    left:calc(50% - 250px/2); /* width divided by 2*/
+    background-color:#eee; 
+     border:thin;
+} 
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    
+
+        function applycolor(id) {
+            var color = $("input[name=color]:checked").val();
+            if (color == null) {
+                alert("Please select a color before clicking on boxes");
+            }
+            var btncolor = document.getElementById(id).style.backgroundColor.toString();
+
+            if (btncolor != "red" && btncolor != "green" && btncolor != "blue") {
+
+                document.getElementById(id).style.backgroundColor = color;
+            }
+            else {
+                alert("Already applied "+ btncolor+"..!");
+            }
+
+        }
+
+        
+</script>
+    <script>
+        function applyborder(id) {
+            
+            id = "#" + id;
+            
+                $(id).mouseover(function () {
+                    $(id).css("border", "thin dotted");
+                });
+                $(id).mouseout(function () {
+                    $(id).css("border", "none");
+                });
+            
+        }
+        function reset() {
+            var color = $("input[name=color]:checked").val();
+            if (color != null) {
+                document.getElementById(color).checked = false;
+                
+            }
+            for (i = 1; i <= 9; i++) {
+                document.getElementById(i).value =i;
+              var j = "#" + i;
+              $(j).css("background-color", "#ccc");
+              
+            }
+        }
+        function myFunction() {
+            
+            var colorarr = [, , , , , , , , , ];
+            for (j = 1; j <= 9; j++) {
+
+                colorarr[j - 1] = document.getElementById(j).style.backgroundColor;
+            }
+
+            
+
+                var arr = [,,,,,,,,]; 
+                while(arr.length < 9){
+
+                var randomnumber = Math.floor(Math.random() * 9 + 1);
+
+                var found = false;
+
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] == randomnumber)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+               
+                if(!found)
+                for(k=0;k<9;k++)
+                {
+                    if (!arr[k]) //**if it's empty !!MODIFICATION**<br/>
+                {
+                        arr[k] = randomnumber;
+                      
+
+                    break;
+                }
+                  }
+                }
+                
+                for (i = 0; i <= 9; i++) {
+                    
+                    document.getElementById(i + 1).value = arr[i];
+                        }
+                    
+            }
+            
+    </script>
+</head>
+<body>
+    <div class="radiolist">
+        <input id="red" type="radio" value="red" name="color" />RED
+        <input id"blue" type="radio" value="blue" name="color" />BLUE
+        <input id="green" type="radio" value="green" name="color" />GREEN
+    </div>
+        </br>
+    <div class="center">
+
+        
+            <input id="1" type="button" value="1" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        
+        <input id="2" type="button" value="2" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        <input id="3" type="button" value="3" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        </br>
+        <input id="4" type="button" value="4" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        <input id="5" type="button" value="5" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        <input id="6" type="button" value="6" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        </br>
+        <input id="7" type="button" value="7" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        <input id="8" type="button" value="8" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+        <input id="9" type="button" value="9" onclick="applycolor(id)" onmouseover="applyborder(id)" class="mybutton" />
+
+    </div>
+    <div class="reset">
+        <input type="button" value="Reset" onclick="reset()" style="width:60px; height:30px" />
+        <input type="button" value="Randomize" onclick="myFunction()" style="width:80px; height:30px" />       
+    </div>
+
+</body>
+</html>

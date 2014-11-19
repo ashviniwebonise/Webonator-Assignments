@@ -1,0 +1,126 @@
+...............DATABASE SCHEMA FOR EXAM ASSESSMENT SYSTEM...............
+
+db.student[ 
+	{
+	_userid: int
+	user_name: string
+	password: string
+	},
+
+     questions
+	[{
+	_qid: int
+	question_content: string
+	}],
+
+     options	
+	[{
+	_oid: int
+	option_content:int
+	}]
+}
+
+db.assessments
+{[{
+	name: string
+	min_marks:int
+	max_marks:int
+	duration: int
+	}],
+
+results_cal[{
+	questions.qid: int
+	options.oid: int
+	correct_answer: int
+	user_answer:int
+	
+		
+	
+}]
+}
+
+
+...............QUERIES PERFORMED ON ABOVE SCHEMA...............
+
+
+db.students.insert( { "userid": "911", "name": "ashu", "password": "ashu","questions":{"qid":"921","q_content":"which state has mumbai as a capital" }, "options":{"oid": "931","o_content":"1"} } );
+
+->WriteResult({ "nInserted" : 1 })
+
+
+db.students.insert( { "userid": "912", "name": "roni", "password": "roni","questions":{"qid":"922","q_content":"which is p m of India" }, "options":{"oid": "932","o_content":"3"} } );
+
+->WriteResult({ "nInserted" : 1 })
+
+ db.students.find().pretty();
+
+->{
+	"_id" : ObjectId("5467581276fb5d2256b091f5"),
+	"userid" : "911",
+	"name" : "ashu",
+	"password" : "ashu",
+	"questions" : {
+		"qid" : "921",
+		"q_content" : "which is the capital of India"
+	},
+	"options" : {
+		"oid" : "931",
+		"o_content" : "1"
+	}
+}
+{
+	"_id" : ObjectId("5467585676fb5d2256b091f6"),
+	"userid" : "912",
+	"name" : "roni",
+	"password" : "roni",
+	"questions" : {
+		"qid" : "922",
+		"q_content" : "which is p m of India"
+	},
+	"options" : {
+		"oid" : "932",
+		"o_content" : "3"
+	}
+}
+> 
+
+db.assessments.insert( {"name": "english","min_marks": "15","max+marks": "20","duration": "20","result_cal":{"qid":"923","oid":"933","correct_answer":"1","user_answer":"1" } } )
+->->WriteResult({ "nInserted" : 1 })
+
+db.assessments.insert( {"name": "general knowledge","min_marks": "15","max+marks": "20","duration": "20","result_cal":{"qid":"924","oid":"934","correct_answer":"3","user_answer":"3" } } )
+->->WriteResult({ "nInserted" : 1 })
+
+
+db.assessments.find().pretty();
+{
+	"_id" : ObjectId("546ad1fc07a2cc45c47aa4ba"),
+	"name" : "english",
+	"min_marks" : "15",
+	"max+marks" : "20",
+	"duration" : "20",
+	"result_cal" : {
+		"qid" : "923",
+		"oid" : "933",
+		"correct_answer" : "1",
+		"user_answer" : "1"
+	}
+}
+{
+	"_id" : ObjectId("546ad22507a2cc45c47aa4bb"),
+	"name" : "general knowledge",
+	"min_marks" : "15",
+	"max+marks" : "20",
+	"duration" : "20",
+	"result_cal" : {
+		"qid" : "924",
+		"oid" : "934",
+		"correct_answer" : "3",
+		"user_answer" : "3"
+	}
+}
+
+
+
+
+
+

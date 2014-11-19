@@ -1,0 +1,18 @@
+Mongodb
+
+1)Mongodb is one of the nonrelational databases , that is completely different from relational databases.According to me it has flexible way to write commands.
+
+2)In schema design it is completely different from relational databases(SQL),Because we can write multiple collections inside one collection.Here are some tems that are used in mongodb , they are:
+	1)collection
+	2)Documents
+	3)(key,vale)
+
+	2.1 In terms of relational databases,collection can be set of documents where document can be set of records and (key,value) these are actual field names and 		their values.
+
+3)If we are having related collections,then there is no need to create saperate collections,just we can put it in one collection and map collections.
+
+4)We also can use (unique objectId of an id) in our way,that is (x=ObjectId),so whenever there is need of objectId we can simply use the (x).  
+
+
+
+ 

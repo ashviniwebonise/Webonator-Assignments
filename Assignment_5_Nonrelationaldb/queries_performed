@@ -1,0 +1,82 @@
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+sudo apt-get install -y mongodb-org=2.6.1 mongodb-org-server=2.6.1 mongodb-org-shell=2.6.1 mongodb-org-mongos=2.6.1 mongodb-org-tools=2.6.1
+
+
+sudo service mongod start
+
+mongod
+
+mongodb --version //displaying version of mongodb 
+->db version v2.6.5
+
+use db
+->switched to db db
+
+show dbs
+->admin  (empty)
+  db     0.078GB
+  local  0.078GB
+
+db.getCollectionNames();
+[
+	"assessments",
+	"company",
+	"nilos",
+	"students",
+	"system.indexes",
+	"users"
+]
+
+
+db.company.remove({});
+->WriteResult({ "nRemoved" : 0 })
+
+db.nilos.drop();  //returns true if collection exists,
+true
+
+
+db.col1.drop();   //returns false when collection is not there in database.
+false
+
+
+db.createCollection("users",{});
+-> { "ok" : 1 }
+
+ db.users.insert({name: "ashu",add: "pune"})
+->WriteResult({ "nInserted" : 1 })
+
+db.users.find().pretty();
+{ "_id" : ObjectId("54670d1a2070a5fe12f2b4ee"), "name" : "ashu" }
+{
+	"_id" : ObjectId("54670d322070a5fe12f2b4ef"),
+	"name" : "ashu",
+	"add" : "pune"
+}
+{
+	"_id" : ObjectId("54670d412070a5fe12f2b4f0"),
+	"name" : "nilam",
+	"add" : "kolhapur"
+}
+{
+	"_id" : ObjectId("54670d4c2070a5fe12f2b4f1"),
+	"name" : "urmila",
+	"add" : "kolkata"
+}
+
+
+
+
+
+
+
+
+
+

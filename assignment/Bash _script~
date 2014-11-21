@@ -1,0 +1,13 @@
+ 
+#!/bin/bash
+echo "host name is :"$HOSTNAME
+echo "type and version of the operating system:"$(uname -a)
+echo "Path to home directory is:"$home
+echo "users log in to system are:"$(users)
+
+ echo $(who)
+echo "group is:"$(groups $USER)
+echo $(date +%d/%m/%y.%H.%M.%S
+)
+
+

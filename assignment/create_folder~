@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd assignment
+echo "directory html_public created"$(mkdir public_html)
+cd public_html
+echo "file inside public_html created"$(touch readme.txt)

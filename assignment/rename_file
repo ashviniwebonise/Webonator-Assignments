@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd assignment
+
+echo $(rename -v 's/\.txt/-hellor/' *.txt)
+
+echo $(find -name x\* -type f | rename -v 's/^/1againrenamed/' x*)
+

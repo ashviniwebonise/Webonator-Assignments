@@ -1,0 +1,12 @@
+ 
+#!/bin/bash
+echo $HOSTNAME
+echo $(uname -a)
+echo $(users)
+echo $home
+ echo $(who)
+echo $(groups $USER)
+echo $(date +%d/%m/%y.%H.%M.%S
+)
+
+

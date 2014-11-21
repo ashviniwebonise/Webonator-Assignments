@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ echo $(rename -v 's/\.txt/-name1/' *.txt)

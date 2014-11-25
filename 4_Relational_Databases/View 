@@ -1,0 +1,114 @@
+
+ create table users (id INT NOT NULL AUTO_INCREMENT,name VARCHAR(20),password VARCHAR(20),is_admin INT,PRIMARY KEY(id)); 
+
+create table questions(id INT NOT NULL AUTO_INCREMENT,content varchar(50),is_image INT, PRIMARY KEY(id));
+
+create table assessments(id INT NOT NULL AUTO_INCREMENT,name VARCHAR(40),min_marks INT,max_marks INT,duration INT,PRIMARY KEY(id)); 
+
+create table options(id INT NOT NULL AUTO_INCREMENT,content varchar(50),is_image INT, PRIMARY KEY(id)); 
+
+create table assessment_mapping(id int NOT NULL,answer_flag int,PRIMARY KEY (id),question_id int,option_id int,assessment_id int,FOREIGN KEY(question_id) REFERENCES questions (id),FOREIGN KEY(assessment_id) REFERENCES assessments(id),FOREIGN KEY(option_id) REFERENCES options(id)); 
+
+create table given_assessments (id int NOT NULL,user_id int,FOREIGN KEY(user_id) REFERENCES users(id),assessmap_id int,FOREIGN KEY(assessmap_id) REFERENCES assessment_mapping,user_answer int,score_count int); 
+
+ create table givens_assessmentsz(id int NOT NULL,user_id int,FOREIGN KEY(user_id) REFERENCES users(id),assess_map_id int,FOREIGN KEY(assess_map_id) REFERENCES assessment_mapping(id),user_answer int,score_count int); 
+
+show tables; 
++--------------------+ 
+| Tables_in_db       | 
++--------------------+ 
+| assessment_mapping3 | 
+| assessments        | 
+| givens_assessmentz  | ,
+| options            | 
+| questions          | 
+| users              | 
++--------------------+ 
+
+ insert into users (id,name,password,is_admin) values (601,'aniket','aniket',1);
+
+ insert into assessment_mapping (111,1,704,810,); 
+
+ select * from givens_assessmentz; 
++-----+---------+---------------+-------------+-------------+ 
+| id  | user_id | assess_map_id | user_answer | score_count | 
++-----+---------+---------------+-------------+-------------+ 
+| 301 |     601 |             1 |           1 |           1 | 
+| 302 |     602 |             1 |           1 |           1 | 
++-----+---------+---------------+-------------+-------------+ 
+
+
+
+select * from questions; 
++-----+----------------------------+----------+ 
+| id  | content                    | is_image | 
++-----+----------------------------+----------+ 
+| 701 | who is p m of India        |        0 | 
+| 702 | what is full form of U,S.  |        0 | 
+| 703 | what is capital of America |        0 | 
+| 704 | what is plural of set      |        0 | 
++-----+----------------------------+----------+ 
+
+
+select * from options; 
++-----+----------------+----------+ 
+| id  | content        | is_image | 
++-----+----------------+----------+ 
+| 801 | United States  |         0 | 
+| 802 | Uniform State  |        0 | 
+| 803 | United Skim    |        0 | 
+| 804 | Unit Specifier |         0 | 
+| 805 | Abdul Kalam    |       0 | 
+| 806 | Abdul Lala     |          0 | 
+| 807 | Narendra Modi  |      0 | 
+| 808 | Amit Shaha     |         0 | 
+| 810 | setes          |               0 | 
+| 811 | setp           |               0 | 
+| 812 | setw           |              0 | 
+| 813 | seto           |              0 | 
+| 814 | washington     |        0 | 
+| 815 | newyork        |          0 | 
+| 816 | manhanton      |        0 | 
+| 817 | no one         |            0 | 
++-----+----------------+----------+ 
+
+select * from givens_assessmentz; 
++-----+---------+---------------+-------------+-------------+ 
+| id  | user_id | assess_map_id | user_answer | score_count | 
++-----+---------+---------------+-------------+-------------+ 
+| 301 |     601 |             1 |           1 |           1 | 
+| 302 |     602 |             1 |           1 |           1 | 
+| 302 |     603 |             2 |           1 |           0 | 
++-----+---------+---------------+-------------+-------------+ 
+
+
+
+
+
+
+
+
+
+
+
+create view r as select name,user_id,sum(score_count)from users as u,givens_assessmentz as g,assessment_mapping3 as m where u.id=g.user_id AND m.id=g.assess_map_id group by assess_map_id; 
+Query OK, 0 rows affected (0.04 sec) 
+
+mysql> select * from r; 
++--------+---------+------------------+ 
+| name   | user_id | sum(score_count) | 
++--------+---------+------------------+ 
+| aniket |     601 |                2 | 
+| tanvi  |     603 |                0 | 
++--------+---------+------------------+ 
+
+
+select * from (select name,user_id,sum score_count from users as u,givens_assessmentz as g,assessment_mapping3 as m where u.id=g.user_id AND m.id=g.assess_map_id group by assess_map_id) as s
+    -> PIVOT
+    -> (
+    -> SUM(score_count)
+    -> FOR [content] IN ('who is p m of India',' what is full form of U,S.'what is capital of America','what is plural of set ','antonym of commissioned','antonym of artificial ')
+    -> AS pivot
+    -> ;
+
+

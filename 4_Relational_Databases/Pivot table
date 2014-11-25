@@ -1,0 +1,8 @@
+select * from (select name,user_id,sum score_count from users as u,givens_assessmentz as g,assessment_mapping3 as m where u.id=g.user_id AND m.id=g.assess_map_id group by assess_map_id) as s
+    -> PIVOT
+    -> (
+    -> SUM(score_count)
+    -> FOR [content] IN ('who is p m of India',' what is full form of U,S.'what is capital of America','what is plural of set ','antonym of commissioned','antonym of artificial ')
+    -> AS pivot
+    -> ;
+

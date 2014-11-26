@@ -1,5 +1,0 @@
-#!/bin/bash
-
-we=find -name x\* -type f
-
-echo $we

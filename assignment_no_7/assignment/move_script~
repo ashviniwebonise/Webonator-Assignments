@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for FILE in $HOME/assignment
-   do
-	mv -t $HOME/assignment $HOME/assignment/public_html
-   done
-
-   

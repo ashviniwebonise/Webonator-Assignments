@@ -1,4 +1,0 @@
-#!/bin/bash
- 
-echo(rename -v 's/^(.{2})/$1-rename/'*.txt)
-

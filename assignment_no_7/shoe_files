@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo "files in system are"$(ls -R $HOME|grep -v ^d)

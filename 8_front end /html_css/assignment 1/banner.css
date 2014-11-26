@@ -1,0 +1,115 @@
+	#page
+	   {
+		width:940px;
+		margin:auto;
+	   }
+
+
+
+
+	#header
+ 	   {
+    		background-color:#499bd7;
+   		 padding:5px;    
+    		text-align:center;      
+    		height:176px;
+   
+
+ 	   }
+
+	#banner
+	  {
+   		 color:white;
+    		font-family:Arial,Helvetica,sans-serif;
+    		font-size:30px; 
+    		vertical-align:-76px;
+	  }
+
+
+	#navigator
+	  {
+   		 background-color:#d6d6d6;
+    		 height:60px;
+    	  }
+
+
+	ul
+	  {
+	  	margin:0;
+		list-style:none;
+		padding-left:80px;
+	  }
+
+
+	li{
+		font-family:Arial,Helvetica,sans-serif;
+		font-size:14px; 
+		vertical-align:-23px;
+		display:inline;
+
+	   }
+
+	a{
+	   	text-decoration:none;
+	   }
+
+	a:link {
+    		color: #ffffff;
+	       }
+
+	a:visited {
+    		color: #000000;
+	       }
+
+	#image{
+
+   		float:left;
+   		padding-left:80px;
+   		padding-right:13px;
+   		padding-top:29px;
+   		padding-bottom:12px;
+   
+	     }
+
+
+	#info
+		{
+
+		padding-right:80px;
+		padding-top:18px;
+		font-family:Arial,Helvetica,sans-serif;
+		font-size:14px;
+
+		}
+
+	p
+		{
+		padding-left:72px;
+		}
+
+	#footer
+		{
+   	 	height:50px;
+    		width:940px;
+    		background-color:#eeeeee;
+    		color:black;
+    		font-family:Arial,Helvetica,sans-serif;
+    		font-size:12px;
+   
+		}
+
+	#footer_left
+		{
+		float:left;
+		font-size:12px;
+
+
+		}
+
+	#footer_right
+		{
+		margin-top:20px;
+		float:right;
+		}
+
+

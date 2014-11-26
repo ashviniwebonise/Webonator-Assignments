@@ -1,3 +1,0 @@
-#!/bin/bash
-
- echo $(rename -v 's/\.txt/-xhello/' *.txt)

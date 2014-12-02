@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Html page</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	
+	<body>
+			
+			<div id="navigation">
+				<div class="container">	
+					
+						<a class="logo"><img src="images/logo.png" alt="logo"></a>
+					
+					<ul>
+						<li><div class="menu"><a href="index.html">THE GALLERY</a></li>
+						
+						<li><div class="menu"><a href="index.html">HOW IT WORKS </a></li>
+						
+						<li><div class="menu"><a href="index.html">HELP</a></li>
+						
+					</ul>
+						<div class="clear"></div>
+				</div>
+
+			</div>
+
+			<div id="pattern">
+			    <div class="container">	
+					<img src="images/header_image.png" alt="header_imaage">					
+				
+				<div id="content">
+					<h1>Your Moods Change</h1>
+					<h2>So should art on your walls</h2>				
+
+						<div class="rectanglewhite">VIEW GALLERY</div>
+						<div class="rectangleyellow">JOIN NOW</div>
+						
+					
+															
+				</div>	
+
+			     </div>
+			</div>
+	
+			<div id="pattern2">
+				<div class="container">
+					<div class="text">HOW IT WORKS</div>
+
+						<ul>				
+						<li><div class="circles"><img src="images/computer.png"></div><p>Add art to your queue online</p></li>
+						<li><div class="circles"><img src="images/Home.png"></div><p>Receive art at your home in orde you specify</p></li>
+						<li><div class="circles"><img src="images/message.png"></div><p>Keep art for as long as you like.Buy only what you love</p></li>
+						<li><div class="circles"><img src="images/return.png"></div><p>Return art to receive the next piece in your queue</p></li>
+						</ul>
+						<div class="clear"></div>
+						
+
+				       </div>				
+			</div>
+
+			<div id="footer">
+
+				<div class="container">
+
+					<ul >
+						<li id="home"><a href="index.html">HOME |</a></li>				
+						<li><a class="footerlist" href="index.html">THE GALLARY |</a></li>				
+						<li><a class="footerlist" href="index.html">HOW IT WORKS |</a></li>				
+						<li><a class="footerlist" href="index.html">HELP </a></li>				
+						
+					</ul>
+					
+					<ul class ="socialicons">
+
+						<li><div><a class="logos"href="index.html"><img src="images/g_logo.png"/></a></div></li>				
+						<li><div><a class="logos" href="index.html"><img src="images/p_logo.png"/></a></div></li>				
+						<li><div><a class="logos" href="index.html"><img src="images/bird_logo.png"/></a></div></li>				
+						<li><div><a class="logos" href="index.html"><img src="images/f_logo.png"/></a></div></li>	
+									
+						
+					</ul>
+						<div class="clear"></div>				
+
+					<div class="copyright">&copy Artforth All Rights Reserved</div>
+						
+							<ul class="righttext">
+								<li><a href="index.html">Terms of service |</a></li>
+								<li><a href="index.html">Privacy poloicy |</a></li>	
+								<li><a href="index.html">Site map</a></li>				
+							</ul>		
+
+					</div>
+
+					<div class="clear"></div>				
+				
+			</div>
+		</body>
+</html>

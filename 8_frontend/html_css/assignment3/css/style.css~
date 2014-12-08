@@ -28,6 +28,7 @@ body
    		 background-color:#444444;	
 		 line-height:52px; 
 		}
+
 .logo 		{		
 		height:30px;
 		width:138px;
@@ -226,9 +227,7 @@ h2		{
 .copyright	{
 		font-size:14px;
 		color:#939393;		
-		float:left;
-		
-		
+		float:left;		
 			
 		}
 .copyright ul

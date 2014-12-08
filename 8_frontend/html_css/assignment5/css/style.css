@@ -188,11 +188,20 @@ p		{
 		border:1px solid #939393;			
 		}
 
-.signup		{
+.movehome	{
 		width:76px;
 		border-radius:3px;
 		line-height:36px;
-		background-color:#939393;
+		background-color:#FF4455;
+		display:block;
+		float:right;
+		margin-top:-1px;
+		}
+.movehome{
+			width:76px;
+		border-radius:3px;
+		line-height:36px;
+		background-color:#FF4455;
 		display:block;
 		float:right;
 		margin-top:-1px;

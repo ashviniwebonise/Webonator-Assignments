@@ -9,8 +9,8 @@ Webomagick is a gem used for image processing. Webomagick uses Imagemagick and R
 
 ### Dependency:
 * Install following delegates from below link:
- [(http://www.imagemagick.org/download/delegates/jpegsr9a.zip)]
- [(http://www.imagemagick.org/download/delegates/libpng-1.6.16.tar.gz)]
+ (http://www.imagemagick.org/download/delegates/jpegsr9a.zip)
+ (http://www.imagemagick.org/download/delegates/libpng-1.6.16.tar.gz)
 * Download Imagemagick Library:[Imagemagick Library](http://www.imagemagick.org/script/install-source.php)
 * RMagick Gem: [RMagick Gem](https://github.com/rmagick/rmagick)
 

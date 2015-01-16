@@ -35,7 +35,7 @@ Require the gem
 require 'webomagick'
 ```
 ____________________________________________________________________________
-#####Following are the actions user can perform on image:
+Following are the actions user can perform on image:
 
 #### thumbnail(width : int)
 Resize the image according to  width

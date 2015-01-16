@@ -38,7 +38,7 @@ ____________________________________________________________________________
 Following are the actions user can perform on image:
 
 #### thumbnail(width : int)
-Resize the image according to  width
+Resize the image according to width.
 
 * Example
 ``` ruby
@@ -46,14 +46,14 @@ Resize the image according to  width
 ```
 
 #### rotate(degrees : int)
-rotate the image according degrees 
+rotate the image according degrees.
 
 * Example:
 ``` ruby
 "actions" => {"rotate"=>50}
 ```
 #### resize_by_resolution(resolution :int)
-Resize the image according to resolution
+Resize the image according to resolution.
 
 * Example
 
@@ -82,7 +82,7 @@ Resize the image according to percentage.
 ``` ruby
 "actions" => {"resize_by_scale"=>1.25}
 ```
-*Example for manipulating an image
+*Example for manipulating an image.
 ____________________________________________________________________________
 ```ruby
 param = {"actions" => "{"thumbnail"=>50}","source_url" => "https://encrypted.google.com/images/srpr/logo11w.png","result" => "/home/deepak/test/test.png"}
